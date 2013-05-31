@@ -12,7 +12,7 @@ recipe "nginx::source", "Installs nginx from source and sets up configuration wi
   supports os
 end
 
-%w{ yum }.each do |cb|
+%w{ yum iptables }.each do |cb|
   depends cb
 end
 
