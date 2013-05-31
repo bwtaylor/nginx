@@ -8,11 +8,11 @@ version           "1.6.0"
 recipe "nginx", "Installs nginx package and sets up configuration with Debian apache style with sites-enabled/sites-available"
 recipe "nginx::source", "Installs nginx from source and sets up configuration with Debian apache style with sites-enabled/sites-available"
 
-%w{ ubuntu debian centos redhat amazon scientific oracle fedora }.each do |os|
+%w{ centos redhat oracle fedora }.each do |os|
   supports os
 end
 
-%w{ build-essential yum apt runit }.each do |cb|
+%w{ yum }.each do |cb|
   depends cb
 end
 
