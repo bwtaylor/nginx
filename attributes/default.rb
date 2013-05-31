@@ -31,10 +31,7 @@ default['nginx']['log_dir'] = "/var/log/nginx"
 default['nginx']['binary'] = "/usr/sbin/nginx"
 
 case node['platform']
-when "debian","ubuntu"
-  default['nginx']['user']       = "www-data"
-  default['nginx']['init_style'] = "runit"
-when "redhat","centos","scientific","amazon","oracle","fedora"
+when "redhat","centos","oracle","fedora"
   default['nginx']['user']       = "nginx"
   default['nginx']['init_style'] = "init"
   default['nginx']['repo_source'] = "epel"

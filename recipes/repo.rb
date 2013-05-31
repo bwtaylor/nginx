@@ -29,14 +29,4 @@ when "rhel","fedora"
     description "Nginx.org Repository"
     url node['nginx']['upstream_repository']
   end
-when "debian"
-  include_recipe "apt"
-
-  apt_repository "nginx" do
-    uri node['nginx']['upstream_repository']
-    distribution node['lsb']['codename']
-    components ["nginx"]
-    deb_src true
-    key 'http://nginx.org/keys/nginx_signing.key'
-  end
 end
